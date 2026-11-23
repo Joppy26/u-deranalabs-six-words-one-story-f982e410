@@ -1,17 +1,29 @@
 # Six Words, One Story
 
-[![Competition](https://make.fun/badge/u-deranalabs-six-words-one-story-f982e410.svg)](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410)
-[![Rank](https://make.fun/badge/u-deranalabs-six-words-one-story-f982e410/Joppy26/u-deranalabs-six-words-one-story-f982e410/rank.svg)](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410)
-[![Reward](https://make.fun/badge/u-deranalabs-six-words-one-story-f982e410/Joppy26/u-deranalabs-six-words-one-story-f982e410/reward.svg)](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410)
+[![make.fun · u-deranalabs-six-words-one-story-f982e410](https://make.fun/badge/u-deranalabs-six-words-one-story-f982e410.svg)](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410?utm_source=github&utm_medium=readme&utm_campaign=u-deranalabs-six-words-one-story-f982e410)
+[![make.fun · rank](https://make.fun/badge/u-deranalabs-six-words-one-story-f982e410/Joppy26/u-deranalabs-six-words-one-story-f982e410/rank.svg)](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-deranalabs-six-words-one-story-f982e410)
+[![make.fun · reward](https://make.fun/badge/u-deranalabs-six-words-one-story-f982e410/Joppy26/u-deranalabs-six-words-one-story-f982e410/reward.svg)](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410?utm_source=github&utm_medium=readme&utm_campaign=u-deranalabs-six-words-one-story-f982e410)
 
-Entry for the [Six Words, One Story bounty on make.fun](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410).
+An entry for the [Six Words, One Story](https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410) competition on make.fun: one complete story in exactly six words.
 
-## The story
-
-> The letter arrived. He'd died yesterday.
-
-Six words, 40 characters. A whole life in one line: a letter arrives, and its writer is already dead. The twist lands in the second sentence, and the reader fills in the rest: what the letter said, who wrote it, and whether it was ever meant to be read.
+> He never came home. She bloomed.
 
 ## How it works
 
-`main.ts` writes the story deterministically to `/output/entry.txt`. Running it twice produces byte-identical output.
+`main.ts` writes the fixed six-word story to `entry.txt` inside the output directory: `/output` by default, or the directory named by `MAKEFUN_OUTPUT_DIR` when set. It uses only the Node standard library, with no network, no clock, and no randomness, so the output is always the same.
+
+## Run it
+
+```sh
+node main.ts
+```
+
+To write to a different directory:
+
+```sh
+MAKEFUN_OUTPUT_DIR=/tmp/six-words-out node main.ts
+```
+
+## Determinism
+
+The entry text is a fixed constant, so every run writes byte-identical output. Two runs into two different directories were verified with `cmp` to produce identical `entry.txt` files.
