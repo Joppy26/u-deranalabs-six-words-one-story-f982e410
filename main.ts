@@ -1,20 +1,10 @@
-// Six Words, One Story
-// make.fun competition: u-deranalabs-six-words-one-story-f982e410
-// https://make.fun/bounty/u-deranalabs-six-words-one-story-f982e410
-//
-// Writes the fixed six-word story to entry.txt inside the output
-// directory: /output by default, or MAKEFUN_OUTPUT_DIR when set.
-// Node 22, standard library only. No network, no clock, no randomness.
-
 import { mkdirSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
 
-const ENTRY = "He never came home. She bloomed.";
+// Six Words, One Story — entry for make.fun competition
+// u-deranalabs-six-words-one-story-f982e410
+// A whole life in six words: a letter arrives from someone already gone.
+// The twist is the timing — the reader fills in what the letter said.
+const STORY = "The letter arrived. He'd died yesterday.";
 
-function main(): void {
-  const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
-  mkdirSync(outDir, { recursive: true });
-  writeFileSync(join(outDir, "entry.txt"), ENTRY, "utf8");
-}
-
-main();
+mkdirSync("/output", { recursive: true });
+writeFileSync("/output/entry.txt", STORY, "utf8");
